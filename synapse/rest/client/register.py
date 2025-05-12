@@ -952,13 +952,13 @@ class RegisterAppServiceOnlyRestServlet(RestServlet):
 
 
 class PhoneRegistrationTokenServlet(RestServlet):
-    """Handles the first step of registration via phone number verification only.
+    """Handles phone verification for both registration and login.
     
     This is similar to WhatsApp's onboarding flow where:
     1. User enters phone number
     2. Server sends OTP
     3. User verifies OTP
-    4. User creates profile
+    4. If new user: create profile; If existing user: log in
     """
     PATTERNS = client_patterns("/register/phone/requestToken$")
 
@@ -1003,21 +1003,30 @@ class PhoneRegistrationTokenServlet(RestServlet):
                 Codes.THREEPID_DENIED,
             )
 
-        # Check if phone number is already in use
+        # Check if phone number is already in use - but don't error, just track this
         existing_user_id = await self.store.get_user_id_by_threepid("msisdn", msisdn)
-        if existing_user_id is not None:
-            raise SynapseError(
-                400, "Phone number is already in use", Codes.THREEPID_IN_USE
-            )
-
+        
         # Generate session ID to track this registration attempt
-        session_id = random_string(16)
+        session = await self.store.create_ui_auth_session(
+            clientdict=body, 
+            uri="/register/phone/requestToken", 
+            method="POST",
+            description="Phone number verification for registration"
+        )
+        session_id = session.session_id
         
         # Store the phone number in the session for later use
         await self.auth_handler.set_session_data(
             session_id,
             "phone_registration_msisdn",
             msisdn
+        )
+        
+        # Store whether this is a login (existing user) or registration (new user)
+        await self.auth_handler.set_session_data(
+            session_id,
+            "phone_existing_user_id",
+            existing_user_id  # Will be None for registration, user_id for login
         )
 
         # Generate a verification code
@@ -1047,18 +1056,19 @@ class PhoneRegistrationTokenServlet(RestServlet):
                 500, "Failed to send verification code", Codes.SERVER_ERROR
             )
 
-        logger.info(f"Phone registration initiated for {msisdn}, session: {session_id}")
+        logger.info(f"Phone verification initiated for {msisdn}, session: {session_id}, {'login' if existing_user_id else 'registration'}")
         
         # Return the session ID to the client
         return 200, {
             "sid": session_id,
+            # "is_login": existing_user_id is not None,  # Tell client if this is login or registration
             # For development only - remove in production
-            "mock_otp": verification_code
+            # "mock_otp": verification_code
         }
 
 
 class PhoneRegistrationVerifyServlet(RestServlet):
-    """Handles OTP verification for phone-based registration."""
+    """Handles OTP verification for phone-based registration and login."""
     PATTERNS = client_patterns("/register/phone/verify$")
 
     def __init__(self, hs: "HomeServer"):
@@ -1070,14 +1080,14 @@ class PhoneRegistrationVerifyServlet(RestServlet):
         self.clock = hs.get_clock()
 
     async def on_POST(self, request: SynapseRequest) -> Tuple[int, JsonDict]:
-        """Verify the OTP code and complete registration if successful.
+        """Verify the OTP code and complete registration or login if successful.
         
         Request body should contain:
         {
             "sid": "session_id_from_requestToken",
             "otp": "123456",
-            "username": "desired_username",  # Optional
-            "display_name": "Display Name"   # Optional
+            "username": "desired_username",  # Optional, only used for registration
+            "display_name": "Display Name"   # Optional, only used for registration
         }
         """
         body = parse_json_object_from_request(request)
@@ -1113,8 +1123,49 @@ class PhoneRegistrationVerifyServlet(RestServlet):
         
         if msisdn is None:
             raise SynapseError(400, "Invalid session data", Codes.INVALID_PARAM)
+
+        # Get the existing user_id if this is a login
+        existing_user_id = await self.auth_handler.get_session_data(
+            session_id, "phone_existing_user_id", None
+        )
         
-        # Get desired username if provided, otherwise generate one from phone number
+        # If we have an existing user, this is a login flow
+        if existing_user_id:
+            logger.info(f"Phone verification successful for login: {msisdn}, user: {existing_user_id}")
+            
+            # Create a device and access token for the existing user
+            device_id = body.get("device_id")
+            initial_display_name = body.get("initial_device_display_name", "Mobile Device")
+            (
+                device_id,
+                access_token,
+                valid_until_ms,
+                refresh_token,
+            ) = await self.registration_handler.register_device(
+                existing_user_id, device_id, initial_display_name, is_guest=False
+            )
+            
+            # Return user credentials
+            result = {
+                "user_id": existing_user_id,
+                "access_token": access_token,
+                "device_id": device_id,
+                "home_server": self.hs.hostname,
+            }
+            
+            if valid_until_ms is not None:
+                expires_in_ms = valid_until_ms - self.clock.time_msec()
+                result["expires_in_ms"] = expires_in_ms
+                
+            if refresh_token is not None:
+                result["refresh_token"] = refresh_token
+                
+            # Clear the session data
+            await self._clear_session_data(session_id)
+                
+            return 200, result
+            
+        # Otherwise, this is a registration flow - continue with user creation
         desired_username = body.get("username")
         if desired_username is not None:
             # Convert to lowercase as per existing registration logic
@@ -1161,6 +1212,7 @@ class PhoneRegistrationVerifyServlet(RestServlet):
         threepid = {
             "medium": "msisdn",
             "address": msisdn,
+            "validated_at": self.clock.time_msec(),
         }
         
         # Generate a random password for the user
@@ -1189,10 +1241,8 @@ class PhoneRegistrationVerifyServlet(RestServlet):
             user_id, device_id, initial_display_name, is_guest=False
         )
         
-        # Clear the session data as it's no longer needed
-        await self.auth_handler.set_session_data(session_id, "phone_registration_otp", None)
-        await self.auth_handler.set_session_data(session_id, "phone_registration_msisdn", None)
-        await self.auth_handler.set_session_data(session_id, "phone_registration_otp_expiry", None)
+        # Clear the session data
+        await self._clear_session_data(session_id)
         
         # Return user credentials
         result = {
@@ -1200,6 +1250,7 @@ class PhoneRegistrationVerifyServlet(RestServlet):
             "access_token": access_token,
             "device_id": device_id,
             "home_server": self.hs.hostname,
+            "threepid": threepid,
         }
         
         if valid_until_ms is not None:
@@ -1210,6 +1261,13 @@ class PhoneRegistrationVerifyServlet(RestServlet):
             result["refresh_token"] = refresh_token
             
         return 200, result
+    
+    async def _clear_session_data(self, session_id: str) -> None:
+        """Helper method to clear session data once verification is complete."""
+        await self.auth_handler.set_session_data(session_id, "phone_registration_otp", None)
+        await self.auth_handler.set_session_data(session_id, "phone_registration_msisdn", None)
+        await self.auth_handler.set_session_data(session_id, "phone_registration_otp_expiry", None)
+        await self.auth_handler.set_session_data(session_id, "phone_existing_user_id", None)
 
 
 def _calculate_registration_flows(

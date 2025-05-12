@@ -1,0 +1,692 @@
+2025-05-09 14:47:59,440 - root - 352 - WARNING - main - ***** STARTING SERVER *****
+2025-05-09 14:47:59,440 - root - 353 - WARNING - main - Server /Users/victorwhyte/dev/orgs/xerence/synapse/synapse/app/homeserver.py version 1.129.0 (b=develop,740fc885c)
+2025-05-09 14:47:59,440 - root - 358 - WARNING - main - Copyright (c) 2023 New Vector, Inc
+2025-05-09 14:47:59,440 - root - 359 - WARNING - main - Licensed under the AGPL 3.0 license. Website: https://github.com/element-hq/synapse
+2025-05-09 14:47:59,440 - root - 362 - INFO - main - Server hostname: Aabo
+2025-05-09 14:47:59,440 - root - 363 - INFO - main - Public Base URL: https://Aabo/
+2025-05-09 14:47:59,440 - root - 364 - INFO - main - Instance name: master
+2025-05-09 14:47:59,440 - root - 365 - INFO - main - Twisted reactor: SelectReactor
+2025-05-09 14:47:59,440 - synapse.app.homeserver - 373 - INFO - main - Setting up server
+2025-05-09 14:47:59,440 - synapse.server - 357 - INFO - main - Setting up.
+2025-05-09 14:47:59,710 - synapse.storage.databases - 77 - INFO - main - [database config 'master']: Checking database server
+2025-05-09 14:47:59,739 - synapse.storage.databases - 80 - INFO - main - [database config 'master']: Preparing for databases ['main', 'state']
+2025-05-09 14:47:59,739 - synapse.storage.prepare_database - 135 - INFO - main - ['main', 'state']: Checking existing schema version
+2025-05-09 14:48:00,063 - synapse.storage.prepare_database - 165 - INFO - main - ['main', 'state']: Initialising new database
+2025-05-09 14:48:00,950 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v73
+2025-05-09 14:48:00,951 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/01event_failed_pull_attempts.sql
+2025-05-09 14:48:00,955 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/02add_pusher_enabled.sql
+2025-05-09 14:48:00,955 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/02room_id_indexes_for_purging.sql
+2025-05-09 14:48:00,957 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/03pusher_device_id.sql
+2025-05-09 14:48:00,959 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/03users_approved_column.sql
+2025-05-09 14:48:00,960 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/04partial_join_details.sql
+2025-05-09 14:48:00,960 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/04pending_device_list_updates.sql
+2025-05-09 14:48:00,971 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 73/05old_push_actions.sql.postgres
+2025-05-09 14:48:01,005 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/06thread_notifications_thread_id_idx.sql
+2025-05-09 14:48:01,016 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 73/08thread_receipts_non_null.sql.postgres
+2025-05-09 14:48:01,017 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/09partial_joined_via_destination.sql
+2025-05-09 14:48:01,034 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/09threads_table.sql
+2025-05-09 14:48:01,037 - synapse.storage.prepare_database - 524 - INFO - main - Running 73/10_update_sqlite_fts4_tokenizer.py:run_create
+2025-05-09 14:48:01,037 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/10login_tokens.sql
+2025-05-09 14:48:01,041 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 73/11event_search_room_id_n_distinct.sql.postgres
+2025-05-09 14:48:01,042 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/12refactor_device_list_outbound_pokes.sql
+2025-05-09 14:48:01,045 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/13add_device_lists_index.sql
+2025-05-09 14:48:01,045 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/20_un_partial_stated_room_stream.sql
+2025-05-09 14:48:01,048 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 73/21_un_partial_stated_room_stream_seq.sql.postgres
+2025-05-09 14:48:01,051 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/22_rebuild_user_dir_stats.sql
+2025-05-09 14:48:01,052 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/22_un_partial_stated_event_stream.sql
+2025-05-09 14:48:01,055 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/23_fix_thread_index.sql
+2025-05-09 14:48:01,056 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 73/23_un_partial_stated_room_stream_seq.sql.postgres
+2025-05-09 14:48:01,057 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/24_events_jump_to_date_index.sql
+2025-05-09 14:48:01,058 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 73/25drop_presence.sql
+2025-05-09 14:48:01,059 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v74
+2025-05-09 14:48:01,059 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 74/01_user_directory_stale_remote_users.sql
+2025-05-09 14:48:01,061 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 74/02_set_device_id_for_pushers_bg_update.sql
+2025-05-09 14:48:01,063 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 74/03_membership_tables_event_stream_ordering.sql.postgres
+2025-05-09 14:48:01,064 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 74/03_room_membership_index.sql
+2025-05-09 14:48:01,067 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 74/04_delete_e2e_backup_keys_for_deactivated_users.sql
+2025-05-09 14:48:01,070 - synapse.storage.prepare_database - 524 - INFO - main - Running 74/04_membership_tables_event_stream_ordering_triggers.py:run_create
+2025-05-09 14:48:01,071 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 74/05_events_txn_id_device_id.sql
+2025-05-09 14:48:01,076 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 74/90COMMENTS_destinations.sql.postgres
+2025-05-09 14:48:01,078 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v75
+2025-05-09 14:48:01,078 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v76
+2025-05-09 14:48:01,079 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 76/01_add_profiles_full_user_id_column.sql
+2025-05-09 14:48:01,080 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 76/02_add_user_filters_full_user_id_column.sql
+2025-05-09 14:48:01,080 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 76/03_per_user_experimental_features.sql
+2025-05-09 14:48:01,083 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 76/04_add_room_forgetter.sql
+2025-05-09 14:48:01,087 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v77
+2025-05-09 14:48:01,088 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 77/01_add_profiles_not_valid_check.sql.postgres
+2025-05-09 14:48:01,088 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 77/02_add_user_filters_not_valid_check.sql.postgres
+2025-05-09 14:48:01,089 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 77/03bg_populate_full_user_id_profiles.sql
+2025-05-09 14:48:01,089 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 77/04bg_populate_full_user_id_user_filters.sql
+2025-05-09 14:48:01,090 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 77/05thread_notifications_backfill.sql
+2025-05-09 14:48:01,094 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 77/06thread_notifications_not_null_event_push_actions.sql.postgres
+2025-05-09 14:48:01,095 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 77/06thread_notifications_not_null_event_push_actions_staging.sql.postgres
+2025-05-09 14:48:01,096 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 77/06thread_notifications_not_null_event_push_summary.sql.postgres
+2025-05-09 14:48:01,096 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 77/14bg_indices_event_stream_ordering.sql
+2025-05-09 14:48:01,097 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v78
+2025-05-09 14:48:01,100 - synapse.storage.prepare_database - 524 - INFO - main - Running 78/03event_extremities_constraints.py:run_create
+2025-05-09 14:48:01,101 - synapse.storage.prepare_database - 524 - INFO - main - Running 78/04_add_full_user_id_index_user_filters.py:run_create
+2025-05-09 14:48:01,102 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v79
+2025-05-09 14:48:01,102 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 79/03_read_write_locks_triggers.sql.postgres
+2025-05-09 14:48:01,108 - synapse.storage.prepare_database - 524 - INFO - main - Running 79/04_mitigate_stream_ordering_update_race.py:run_create
+2025-05-09 14:48:01,109 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 79/05_read_write_locks_triggers.sql.postgres
+2025-05-09 14:48:01,111 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v80
+2025-05-09 14:48:01,111 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 80/01_users_alter_locked.sql
+2025-05-09 14:48:01,113 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 80/02_read_write_locks_unlogged.sql.postgres
+2025-05-09 14:48:01,120 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 80/02_scheduled_tasks.sql
+2025-05-09 14:48:01,124 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 80/03_read_write_locks_triggers.sql.postgres
+2025-05-09 14:48:01,127 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 80/04_read_write_locks_deadlock.sql.postgres
+2025-05-09 14:48:01,128 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v81
+2025-05-09 14:48:01,129 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v82
+2025-05-09 14:48:01,129 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 82/02_scheduled_tasks_index.sql
+2025-05-09 14:48:01,130 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 82/04_add_indices_for_purging_rooms.sql
+2025-05-09 14:48:01,130 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 82/05gaps.sql
+2025-05-09 14:48:01,131 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v83
+2025-05-09 14:48:01,131 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 83/01_drop_old_tables.sql
+2025-05-09 14:48:01,133 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 83/05_cross_signing_key_update_grant.sql
+2025-05-09 14:48:01,137 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 83/06_event_push_summary_room.sql
+2025-05-09 14:48:01,138 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v84
+2025-05-09 14:48:01,138 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 84/01_auth_links_stats.sql.postgres
+2025-05-09 14:48:01,139 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 84/02_auth_links_index.sql
+2025-05-09 14:48:01,139 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 84/03_auth_links_analyze.sql.postgres
+2025-05-09 14:48:01,142 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 84/04_access_token_index.sql
+2025-05-09 14:48:01,142 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v85
+2025-05-09 14:48:01,143 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 85/01_add_suspended.sql
+2025-05-09 14:48:01,143 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 85/02_add_instance_names.sql
+2025-05-09 14:48:01,144 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 85/03_new_sequences.sql.postgres
+2025-05-09 14:48:01,147 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 85/04_cleanup_device_federation_outbox.sql
+2025-05-09 14:48:01,147 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 85/05_add_instance_names_converted_pos.sql
+2025-05-09 14:48:01,147 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 85/06_add_room_reports.sql
+2025-05-09 14:48:01,150 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v86
+2025-05-09 14:48:01,151 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 86/01_authenticate_media.sql
+2025-05-09 14:48:01,152 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 86/02_receipts_event_id_index.sql
+2025-05-09 14:48:01,154 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v87
+2025-05-09 14:48:01,155 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 87/01_sliding_sync_memberships.sql
+2025-05-09 14:48:01,160 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 87/02_per_connection_state.sql
+2025-05-09 14:48:01,172 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 87/03_current_state_index.sql
+2025-05-09 14:48:01,173 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v88
+2025-05-09 14:48:01,174 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/01_add_delayed_events.sql
+2025-05-09 14:48:01,179 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/01_custom_profile_fields.sql
+2025-05-09 14:48:01,182 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/02_fix_sliding_sync_membership_snapshots_forgotten_column.sql
+2025-05-09 14:48:01,182 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/03_add_otk_ts_added_index.sql
+2025-05-09 14:48:01,182 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/04_current_state_delta_index.sql
+2025-05-09 14:48:01,183 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 88/05_drop_old_otks.sql.postgres
+2025-05-09 14:48:01,188 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/05_sliding_sync_room_config_index.sql
+2025-05-09 14:48:01,189 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 88/06_events_received_ts_index.sql
+2025-05-09 14:48:01,189 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v89
+2025-05-09 14:48:01,189 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 89/01_sliding_sync_membership_snapshot_index.sql
+2025-05-09 14:48:01,190 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 89/01_state_groups_deletion.sql
+2025-05-09 14:48:01,194 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v90
+2025-05-09 14:48:01,195 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 90/01_add_column_participant_room_memberships_table.sql
+2025-05-09 14:48:01,196 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 90/02_delete_unreferenced_state_groups.sql
+2025-05-09 14:48:01,196 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 90/03_remove_old_deletion_bg_update.sql
+2025-05-09 14:48:01,196 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v91
+2025-05-09 14:48:01,197 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 91/01_media_hash.sql
+2025-05-09 14:48:01,197 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v92
+2025-05-09 14:48:01,197 - synapse.storage.prepare_database - 549 - INFO - main - Applying engine-specific schema 92/01_remove_trigger.sql.postgres
+2025-05-09 14:48:01,198 - synapse.storage.prepare_database - 541 - INFO - main - Applying schema 92/02_remove_populate_participant_bg_update.sql
+2025-05-09 14:48:01,198 - synapse.storage.prepare_database - 568 - INFO - main - Schema now up to date
+2025-05-09 14:48:01,200 - synapse.storage.databases - 95 - INFO - main - [database config 'master']: Starting 'main' database
+2025-05-09 14:48:01,217 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for push_rules(id): 1
+2025-05-09 14:48:01,217 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for push_rules_enable(id): 1
+2025-05-09 14:48:01,223 - synapse.storage.databases.main.event_push_actions - 1242 - INFO - main - Searching for stream ordering 1 month ago
+2025-05-09 14:48:01,224 - synapse.storage.databases.main.event_push_actions - 1246 - INFO - main - Found stream ordering 1 month ago: it's 0
+2025-05-09 14:48:01,224 - synapse.storage.databases.main.event_push_actions - 1249 - INFO - main - Searching for stream ordering 1 day ago
+2025-05-09 14:48:01,224 - synapse.storage.databases.main.event_push_actions - 1253 - INFO - main - Found stream ordering 1 day ago: it's 0
+2025-05-09 14:48:01,228 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for access_tokens(id): 1
+2025-05-09 14:48:01,228 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for refresh_tokens(id): 1
+2025-05-09 14:48:01,230 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for event_reports(id): 1
+2025-05-09 14:48:01,230 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for room_reports(id): 1
+2025-05-09 14:48:01,238 - synapse.storage.databases - 112 - INFO - main - [database config 'master']: Starting 'state' database
+2025-05-09 14:48:01,239 - synapse.storage.databases - 128 - INFO - main - [database config 'master']: prepared
+2025-05-09 14:48:01,239 - synapse.server - 360 - INFO - main - Finished setting up.
+2025-05-09 14:48:01,278 - synapse.push.pusher - 45 - INFO - main - email enable notifs: False
+2025-05-09 14:48:01,280 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.device_list_update'
+2025-05-09 14:48:01,280 - synapse.federation.federation_server - 1428 - INFO - main - Registering federation query handler for 'profile'
+2025-05-09 14:48:01,280 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.presence'
+2025-05-09 14:48:01,281 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.typing'
+2025-05-09 14:48:01,281 - synapse.federation.federation_server - 1428 - INFO - main - Registering federation query handler for 'directory'
+2025-05-09 14:48:01,282 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.signing_key_update'
+2025-05-09 14:48:01,282 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'org.matrix.signing_key_update'
+2025-05-09 14:48:01,282 - synapse.federation.federation_server - 1428 - INFO - main - Registering federation query handler for 'client_keys'
+2025-05-09 14:48:01,282 - twisted - 279 - INFO - main - Redirected stdout/stderr to logs
+2025-05-09 14:48:01,282 - synapse.app.homeserver - 180 - INFO - sentinel - Running
+2025-05-09 14:48:01,282 - synapse.app.homeserver - 36 - INFO - sentinel - Set file limit to: 9223372036854775807
+2025-05-09 14:48:01,282 - synapse.metrics._gc - 127 - INFO - sentinel - Collecting gc 1
+2025-05-09 14:48:01,287 - synapse.handlers.deactivate_account - 245 - INFO - user_parter_loop-0 - Starting user parter
+2025-05-09 14:48:01,289 - synapse.util.caches.lrucache - 230 - INFO - sentinel - Expiring LRU caches after 1800 seconds
+2025-05-09 14:48:01,294 - synapse.federation.federation_server - 1408 - INFO - sentinel - Registering federation EDU handler for 'm.receipt'
+2025-05-09 14:48:01,295 - synapse.federation.federation_server - 1408 - INFO - sentinel - Registering federation EDU handler for 'm.direct_to_device'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.health.HealthResource object at 0x1067878c0> to path b'/health'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.ClientRestResource object at 0x106787a10> to path b'/_matrix/client'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <twisted.web.resource.Resource object at 0x1067fe270> to path b'/.well-known'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.http.server.JsonResource object at 0x1067f17f0> to path b'/_synapse/admin'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.pick_idp.PickIdpResource object at 0x1067fe660> to path b'/_synapse/client/pick_idp'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <twisted.web.resource.Resource object at 0x1067f47d0> to path b'/_synapse/client/pick_username'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.new_user_consent.NewUserConsentResource object at 0x1067feba0> to path b'/_synapse/client/new_user_consent'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.sso_register.SsoRegisterResource object at 0x1067fecf0> to path b'/_synapse/client/sso_register'
+2025-05-09 14:48:01,298 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.unsubscribe.UnsubscribeResource object at 0x1067fee40> to path b'/_synapse/client/unsubscribe'
+2025-05-09 14:48:01,299 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching FilePath('/Users/victorwhyte/dev/orgs/xerence/synapse/synapse/static') to path b'/_matrix/static'
+2025-05-09 14:48:01,299 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.media.media_repository_resource.MediaRepositoryResource object at 0x1067ff230> to path b'/_matrix/media/r0'
+2025-05-09 14:48:01,299 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.media.media_repository_resource.MediaRepositoryResource object at 0x1067ff230> to path b'/_matrix/media/v3'
+2025-05-09 14:48:01,299 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.media.media_repository_resource.MediaRepositoryResource object at 0x1067ff230> to path b'/_matrix/media/v1'
+2025-05-09 14:48:01,299 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.federation.transport.server.TransportLayerServer object at 0x1067ffb60> to path b'/_matrix/federation'
+2025-05-09 14:48:01,299 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.key.v2.KeyResource object at 0x10680e7b0> to path b'/_matrix/key'
+2025-05-09 14:48:01,300 - twisted - 279 - INFO - sentinel - SynapseSite starting on 8008
+2025-05-09 14:48:01,300 - twisted - 279 - INFO - sentinel - SynapseSite starting on 8008
+2025-05-09 14:48:01,300 - synapse.app._base - 439 - INFO - sentinel - Synapse now listening on TCP port 8008
+2025-05-09 14:48:01,355 - synapse.storage.background_updates - 410 - INFO - background_updates-0 - Starting background schema updates for database master
+2025-05-09 14:48:01,361 - synapse.handlers.deactivate_account - 255 - INFO - user_parter_loop-0 - User parter finished: stopping
+2025-05-09 14:48:01,363 - synapse.push.pusherpool - 372 - INFO - start_pushers-0 - Started pushers
+2025-05-09 14:48:02,377 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'threads_backfill'
+2025-05-09 14:48:02,387 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'threads_backfill'. Processed 0 items in 7ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:03,389 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'device_lists_changes_in_room_by_room_index'
+2025-05-09 14:48:03,392 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index device_lists_changes_in_room_by_room_idx to device_lists_changes_in_room
+2025-05-09 14:48:03,399 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'device_lists_changes_in_room_by_room_index'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:04,404 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_stats_process_rooms'
+2025-05-09 14:48:04,410 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_stats_process_rooms'. Processed 1 items in 3ms. (total_rate=0.3333333333333333/ms, current_rate=0.3333333333333333/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:05,170 - twisted - 279 - INFO - sentinel - Received SIGINT, shutting down.
+2025-05-09 14:48:05,170 - synapse.storage.databases.main.lock - 113 - INFO - LockStore._on_shutdown-0 - Dropping held locks due to shutdown
+2025-05-09 14:48:05,171 - synapse.storage.databases.main.lock - 124 - INFO - LockStore._on_shutdown-0 - Dropped locks due to shutdown
+2025-05-09 14:48:05,171 - synapse.handlers.presence - 891 - INFO - presence.on_shutdown-0 - Performing _on_shutdown. Persisting 0 unpersisted changes
+2025-05-09 14:48:05,171 - synapse.handlers.presence - 903 - INFO - presence.on_shutdown-0 - Finished _on_shutdown
+2025-05-09 14:48:05,171 - synapse.app._base - 509 - INFO - sentinel - Shutting down...
+2025-05-09 14:48:05,171 - twisted - 279 - INFO - sentinel - (TCP Port 8008 Closed)
+2025-05-09 14:48:05,171 - twisted - 279 - INFO - sentinel - (TCP Port 8008 Closed)
+2025-05-09 14:48:05,173 - twisted - 279 - INFO - sentinel - Main loop terminated.
+2025-05-09 14:48:11,404 - root - 352 - WARNING - main - ***** STARTING SERVER *****
+2025-05-09 14:48:11,404 - root - 353 - WARNING - main - Server /Users/victorwhyte/dev/orgs/xerence/synapse/synapse/app/homeserver.py version 1.129.0 (b=develop,740fc885c)
+2025-05-09 14:48:11,404 - root - 358 - WARNING - main - Copyright (c) 2023 New Vector, Inc
+2025-05-09 14:48:11,404 - root - 359 - WARNING - main - Licensed under the AGPL 3.0 license. Website: https://github.com/element-hq/synapse
+2025-05-09 14:48:11,404 - root - 362 - INFO - main - Server hostname: Aabo
+2025-05-09 14:48:11,404 - root - 363 - INFO - main - Public Base URL: https://Aabo/
+2025-05-09 14:48:11,404 - root - 364 - INFO - main - Instance name: master
+2025-05-09 14:48:11,404 - root - 365 - INFO - main - Twisted reactor: SelectReactor
+2025-05-09 14:48:11,404 - synapse.app.homeserver - 373 - INFO - main - Setting up server
+2025-05-09 14:48:11,405 - synapse.server - 357 - INFO - main - Setting up.
+2025-05-09 14:48:11,453 - synapse.storage.databases - 77 - INFO - main - [database config 'master']: Checking database server
+2025-05-09 14:48:11,455 - synapse.storage.databases - 80 - INFO - main - [database config 'master']: Preparing for databases ['main', 'state']
+2025-05-09 14:48:11,455 - synapse.storage.prepare_database - 135 - INFO - main - ['main', 'state']: Checking existing schema version
+2025-05-09 14:48:11,458 - synapse.storage.prepare_database - 139 - INFO - main - ['main', 'state']: Existing schema is 92 (+2 deltas)
+2025-05-09 14:48:11,458 - synapse.storage.databases.main - 395 - INFO - main - Checking database for consistency with configuration...
+2025-05-09 14:48:11,460 - synapse.storage.prepare_database - 433 - INFO - main - Applying schema deltas for v92
+2025-05-09 14:48:11,461 - synapse.storage.prepare_database - 568 - INFO - main - Schema now up to date
+2025-05-09 14:48:11,462 - synapse.storage.databases - 95 - INFO - main - [database config 'master']: Starting 'main' database
+2025-05-09 14:48:11,487 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for push_rules(id): 1
+2025-05-09 14:48:11,488 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for push_rules_enable(id): 1
+2025-05-09 14:48:11,496 - synapse.storage.databases.main.event_push_actions - 1242 - INFO - main - Searching for stream ordering 1 month ago
+2025-05-09 14:48:11,496 - synapse.storage.databases.main.event_push_actions - 1246 - INFO - main - Found stream ordering 1 month ago: it's 0
+2025-05-09 14:48:11,496 - synapse.storage.databases.main.event_push_actions - 1249 - INFO - main - Searching for stream ordering 1 day ago
+2025-05-09 14:48:11,496 - synapse.storage.databases.main.event_push_actions - 1253 - INFO - main - Found stream ordering 1 day ago: it's 0
+2025-05-09 14:48:11,500 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for access_tokens(id): 1
+2025-05-09 14:48:11,501 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for refresh_tokens(id): 1
+2025-05-09 14:48:11,502 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for event_reports(id): 1
+2025-05-09 14:48:11,503 - synapse.storage.util.id_generators - 98 - INFO - main - Initialising stream generator for room_reports(id): 1
+2025-05-09 14:48:11,512 - synapse.storage.databases - 112 - INFO - main - [database config 'master']: Starting 'state' database
+2025-05-09 14:48:11,513 - synapse.storage.databases - 128 - INFO - main - [database config 'master']: prepared
+2025-05-09 14:48:11,514 - synapse.server - 360 - INFO - main - Finished setting up.
+2025-05-09 14:48:11,543 - synapse.push.pusher - 45 - INFO - main - email enable notifs: False
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.device_list_update'
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1428 - INFO - main - Registering federation query handler for 'profile'
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.presence'
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.typing'
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1428 - INFO - main - Registering federation query handler for 'directory'
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'm.signing_key_update'
+2025-05-09 14:48:11,544 - synapse.federation.federation_server - 1408 - INFO - main - Registering federation EDU handler for 'org.matrix.signing_key_update'
+2025-05-09 14:48:11,545 - synapse.federation.federation_server - 1428 - INFO - main - Registering federation query handler for 'client_keys'
+2025-05-09 14:48:11,545 - twisted - 279 - INFO - main - Redirected stdout/stderr to logs
+2025-05-09 14:48:11,545 - synapse.app.homeserver - 180 - INFO - sentinel - Running
+2025-05-09 14:48:11,545 - synapse.app.homeserver - 36 - INFO - sentinel - Set file limit to: 9223372036854775807
+2025-05-09 14:48:11,545 - synapse.handlers.deactivate_account - 245 - INFO - user_parter_loop-0 - Starting user parter
+2025-05-09 14:48:11,546 - synapse.util.caches.lrucache - 230 - INFO - sentinel - Expiring LRU caches after 1800 seconds
+2025-05-09 14:48:11,549 - synapse.federation.federation_server - 1408 - INFO - sentinel - Registering federation EDU handler for 'm.receipt'
+2025-05-09 14:48:11,549 - synapse.federation.federation_server - 1408 - INFO - sentinel - Registering federation EDU handler for 'm.direct_to_device'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.health.HealthResource object at 0x11cde7a10> to path b'/health'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.ClientRestResource object at 0x11cde7b60> to path b'/_matrix/client'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <twisted.web.resource.Resource object at 0x11d062510> to path b'/.well-known'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.http.server.JsonResource object at 0x11d051a90> to path b'/_synapse/admin'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.pick_idp.PickIdpResource object at 0x11d062900> to path b'/_synapse/client/pick_idp'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <twisted.web.resource.Resource object at 0x11d058690> to path b'/_synapse/client/pick_username'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.new_user_consent.NewUserConsentResource object at 0x11d062e40> to path b'/_synapse/client/new_user_consent'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.sso_register.SsoRegisterResource object at 0x11d062f90> to path b'/_synapse/client/sso_register'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.synapse.client.unsubscribe.UnsubscribeResource object at 0x11d0630e0> to path b'/_synapse/client/unsubscribe'
+2025-05-09 14:48:11,552 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching FilePath('/Users/victorwhyte/dev/orgs/xerence/synapse/synapse/static') to path b'/_matrix/static'
+2025-05-09 14:48:11,553 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.media.media_repository_resource.MediaRepositoryResource object at 0x11d0634d0> to path b'/_matrix/media/r0'
+2025-05-09 14:48:11,553 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.media.media_repository_resource.MediaRepositoryResource object at 0x11d0634d0> to path b'/_matrix/media/v3'
+2025-05-09 14:48:11,553 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.media.media_repository_resource.MediaRepositoryResource object at 0x11d0634d0> to path b'/_matrix/media/v1'
+2025-05-09 14:48:11,553 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.federation.transport.server.TransportLayerServer object at 0x11d063e00> to path b'/_matrix/federation'
+2025-05-09 14:48:11,553 - synapse.util.httpresourcetree - 56 - INFO - sentinel - Attaching <synapse.rest.key.v2.KeyResource object at 0x11d072a50> to path b'/_matrix/key'
+2025-05-09 14:48:11,553 - twisted - 279 - INFO - sentinel - SynapseSite starting on 8008
+2025-05-09 14:48:11,553 - twisted - 279 - INFO - sentinel - SynapseSite starting on 8008
+2025-05-09 14:48:11,553 - synapse.app._base - 439 - INFO - sentinel - Synapse now listening on TCP port 8008
+2025-05-09 14:48:11,593 - synapse.storage.background_updates - 410 - INFO - background_updates-0 - Starting background schema updates for database master
+2025-05-09 14:48:11,597 - synapse.handlers.deactivate_account - 255 - INFO - user_parter_loop-0 - User parter finished: stopping
+2025-05-09 14:48:11,598 - synapse.push.pusherpool - 372 - INFO - start_pushers-0 - Started pushers
+2025-05-09 14:48:12,611 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_stats_process_users'
+2025-05-09 14:48:12,620 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_stats_process_users'. Processed 1 items in 6ms. (total_rate=0.16666666666666666/ms, current_rate=0.16666666666666666/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:12,622 - synapse.storage.background_updates - 546 - INFO - background_updates-0 - Not starting on bg update populate_user_directory_cleanup until populate_user_directory_process_users is done
+2025-05-09 14:48:13,627 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_user_directory_createtables'
+2025-05-09 14:48:13,650 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_user_directory_createtables'. Processed 1 items in 20ms. (total_rate=0.05/ms, current_rate=0.05/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:13,651 - synapse.storage.background_updates - 546 - INFO - background_updates-0 - Not starting on bg update populate_user_directory_cleanup until populate_user_directory_process_users is done
+2025-05-09 14:48:14,652 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_user_directory_process_rooms'
+2025-05-09 14:48:14,677 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_user_directory_process_rooms'. Processed 1 items in 23ms. (total_rate=0.043478260869565216/ms, current_rate=0.043478260869565216/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:14,679 - synapse.storage.background_updates - 546 - INFO - background_updates-0 - Not starting on bg update populate_user_directory_cleanup until populate_user_directory_process_users is done
+2025-05-09 14:48:15,683 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_user_directory_process_users'
+2025-05-09 14:48:15,688 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_user_directory_process_users'. Processed 1 items in 3ms. (total_rate=0.3333333333333333/ms, current_rate=0.3333333333333333/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:16,692 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_user_directory_cleanup'
+2025-05-09 14:48:16,707 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_user_directory_cleanup'. Processed 1 items in 12ms. (total_rate=0.08333333333333333/ms, current_rate=0.08333333333333333/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:17,711 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'events_jump_to_date_index'
+2025-05-09 14:48:17,714 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index events_jump_to_date_idx to events
+2025-05-09 14:48:17,729 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'events_jump_to_date_index'. Processed 1 items in 15ms. (total_rate=0.06666666666666667/ms, current_rate=0.06666666666666667/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:18,735 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'set_device_id_for_pushers'
+2025-05-09 14:48:18,746 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'set_device_id_for_pushers'. Processed 0 items in 8ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:19,751 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'room_membership_user_room_index'
+2025-05-09 14:48:19,753 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index room_membership_user_room_idx to room_memberships
+2025-05-09 14:48:19,760 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'room_membership_user_room_index'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:20,763 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'delete_e2e_backup_keys_for_deactivated_users'
+2025-05-09 14:48:20,772 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'delete_e2e_backup_keys_for_deactivated_users'. Processed 0 items in 6ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:21,779 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'profiles_full_user_id_key_idx'
+2025-05-09 14:48:21,782 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index profiles_full_user_id_key to profiles
+2025-05-09 14:48:21,787 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'profiles_full_user_id_key_idx'. Processed 1 items in 5ms. (total_rate=0.2/ms, current_rate=0.2/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:22,789 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'full_users_filters_unique_idx'
+2025-05-09 14:48:22,791 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index full_users_unique_idx to user_filters
+2025-05-09 14:48:22,799 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'full_users_filters_unique_idx'. Processed 1 items in 8ms. (total_rate=0.125/ms, current_rate=0.125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:23,806 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_full_user_id_profiles'
+2025-05-09 14:48:23,815 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_full_user_id_profiles'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:24,818 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'populate_full_user_id_user_filters'
+2025-05-09 14:48:24,849 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'populate_full_user_id_user_filters'. Processed 1 items in 27ms. (total_rate=0.037037037037037035/ms, current_rate=0.037037037037037035/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:25,851 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_push_actions_staging_thread_id'
+2025-05-09 14:48:25,852 - synapse.storage.background_updates - 746 - INFO - background_updates-0 - Validating constraint event_push_actions_staging_thread_id to event_push_actions_staging
+2025-05-09 14:48:25,856 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_push_actions_staging_thread_id'. Processed 1 items in 4ms. (total_rate=0.25/ms, current_rate=0.25/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:26,858 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_push_actions_thread_id'
+2025-05-09 14:48:26,860 - synapse.storage.background_updates - 746 - INFO - background_updates-0 - Validating constraint event_push_actions_thread_id to event_push_actions
+2025-05-09 14:48:26,863 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_push_actions_thread_id'. Processed 1 items in 3ms. (total_rate=0.3333333333333333/ms, current_rate=0.3333333333333333/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:26,864 - synapse.storage.background_updates - 546 - INFO - background_updates-0 - Not starting on bg update event_push_drop_null_thread_id_indexes until event_push_summary_thread_id is done
+2025-05-09 14:48:27,866 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_push_summary_thread_id'
+2025-05-09 14:48:27,868 - synapse.storage.background_updates - 746 - INFO - background_updates-0 - Validating constraint event_push_summary_thread_id to event_push_summary
+2025-05-09 14:48:27,872 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_push_summary_thread_id'. Processed 1 items in 4ms. (total_rate=0.25/ms, current_rate=0.25/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:28,876 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_push_drop_null_thread_id_indexes'
+2025-05-09 14:48:28,881 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_push_drop_null_thread_id_indexes'. Processed 0 items in 3ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:29,885 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'current_state_events_stream_ordering_idx'
+2025-05-09 14:48:29,887 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index current_state_events_stream_ordering_idx to current_state_events
+2025-05-09 14:48:29,894 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'current_state_events_stream_ordering_idx'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:30,899 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'local_current_membership_stream_ordering_idx'
+2025-05-09 14:48:30,901 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index local_current_membership_stream_ordering_idx to local_current_membership
+2025-05-09 14:48:30,910 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'local_current_membership_stream_ordering_idx'. Processed 1 items in 9ms. (total_rate=0.1111111111111111/ms, current_rate=0.11111111111111112/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:31,913 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'room_memberships_stream_ordering_idx'
+2025-05-09 14:48:31,915 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index room_memberships_stream_ordering_idx to room_memberships
+2025-05-09 14:48:31,921 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'room_memberships_stream_ordering_idx'. Processed 1 items in 6ms. (total_rate=0.16666666666666666/ms, current_rate=0.16666666666666666/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:32,927 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_forward_extremities_event_id_foreign_key_constraint_update'
+2025-05-09 14:48:32,936 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_forward_extremities_event_id_foreign_key_constraint_update'. Processed 100 items in 7ms. (total_rate=14.285714285714286/ms, current_rate=14.285714285714285/ms, total_updated=100, batch_size=100)
+2025-05-09 14:48:33,942 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'e2e_room_keys_index_room_id'
+2025-05-09 14:48:33,943 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index e2e_room_keys_room_id to e2e_room_keys
+2025-05-09 14:48:33,951 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'e2e_room_keys_index_room_id'. Processed 1 items in 8ms. (total_rate=0.125/ms, current_rate=0.125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:34,954 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'room_account_data_index_room_id'
+2025-05-09 14:48:34,956 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index room_account_data_room_id to room_account_data
+2025-05-09 14:48:34,963 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'room_account_data_index_room_id'. Processed 1 items in 8ms. (total_rate=0.125/ms, current_rate=0.125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:35,967 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_push_summary_index_room_id'
+2025-05-09 14:48:35,970 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index event_push_summary_index_room_id to event_push_summary
+2025-05-09 14:48:35,978 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_push_summary_index_room_id'. Processed 1 items in 8ms. (total_rate=0.125/ms, current_rate=0.125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:36,985 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'event_auth_chain_links_origin_index'
+2025-05-09 14:48:36,986 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index event_auth_chain_links_origin_index to event_auth_chain_links
+2025-05-09 14:48:36,993 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'event_auth_chain_links_origin_index'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:38,000 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'access_tokens_refresh_token_id_idx'
+2025-05-09 14:48:38,002 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index access_tokens_refresh_token_id_idx to access_tokens
+2025-05-09 14:48:38,008 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'access_tokens_refresh_token_id_idx'. Processed 1 items in 6ms. (total_rate=0.16666666666666666/ms, current_rate=0.16666666666666666/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:39,014 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'cleanup_device_federation_outbox'
+2025-05-09 14:48:39,021 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'cleanup_device_federation_outbox'. Processed 100 items in 5ms. (total_rate=20.0/ms, current_rate=20.0/ms, total_updated=100, batch_size=100)
+2025-05-09 14:48:40,023 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'receipts_room_id_event_id_index'
+2025-05-09 14:48:40,024 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index receipts_linearized_event_id to receipts_linearized
+2025-05-09 14:48:40,031 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'receipts_room_id_event_id_index'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:41,033 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'current_state_events_members_room_index'
+2025-05-09 14:48:41,034 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index current_state_events_members_room_index to current_state_events
+2025-05-09 14:48:41,039 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'current_state_events_members_room_index'. Processed 1 items in 5ms. (total_rate=0.2/ms, current_rate=0.2/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:41,041 - synapse.storage.background_updates - 546 - INFO - background_updates-0 - Not starting on bg update sliding_sync_joined_rooms_bg_update until sliding_sync_prefill_joined_rooms_to_recalculate_table_bg_update is done
+2025-05-09 14:48:41,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-0 - Rotating notifications
+2025-05-09 14:48:41,508 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-0 - Rotating notifications up to: 1
+2025-05-09 14:48:41,510 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-0 - Rotating notifications, handling 0 rows
+2025-05-09 14:48:41,514 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-0 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:48:41,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-0 - Dropped 0 items from caches
+2025-05-09 14:48:42,047 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_membership_snapshots_bg_update'
+2025-05-09 14:48:42,060 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_membership_snapshots_bg_update'. Processed 0 items in 10ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:43,064 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_membership_snapshots_bg_update'
+2025-05-09 14:48:43,075 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_membership_snapshots_bg_update'. Processed 0 items in 9ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:43,077 - synapse.storage.background_updates - 546 - INFO - background_updates-0 - Not starting on bg update sliding_sync_joined_rooms_bg_update until sliding_sync_prefill_joined_rooms_to_recalculate_table_bg_update is done
+2025-05-09 14:48:44,082 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_prefill_joined_rooms_to_recalculate_table_bg_update'
+2025-05-09 14:48:44,088 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_prefill_joined_rooms_to_recalculate_table_bg_update'. Processed 0 items in 4ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:45,094 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_joined_rooms_bg_update'
+2025-05-09 14:48:45,098 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_joined_rooms_bg_update'. Processed 0 items in 2ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:46,101 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_membership_snapshots_fix_forgotten_column_bg_update'
+2025-05-09 14:48:46,117 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_membership_snapshots_fix_forgotten_column_bg_update'. Processed 0 items in 12ms. (total_rate=None/ms, current_rate=None/ms, total_updated=0, batch_size=100)
+2025-05-09 14:48:47,125 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'add_otk_ts_added_index'
+2025-05-09 14:48:47,127 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index e2e_one_time_keys_json_user_id_device_id_algorithm_ts_added_idx to e2e_one_time_keys_json
+2025-05-09 14:48:47,139 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'add_otk_ts_added_index'. Processed 1 items in 12ms. (total_rate=0.08333333333333333/ms, current_rate=0.08333333333333333/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:48,145 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'current_state_delta_stream_room_index'
+2025-05-09 14:48:48,147 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index current_state_delta_stream_room_idx to current_state_delta_stream
+2025-05-09 14:48:48,155 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'current_state_delta_stream_room_index'. Processed 1 items in 8ms. (total_rate=0.125/ms, current_rate=0.125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:49,158 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_connection_room_configs_required_state_id_idx'
+2025-05-09 14:48:49,160 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index sliding_sync_connection_room_configs_required_state_id_idx to sliding_sync_connection_room_configs
+2025-05-09 14:48:49,168 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_connection_room_configs_required_state_id_idx'. Processed 1 items in 7ms. (total_rate=0.14285714285714285/ms, current_rate=0.14285714285714285/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:50,175 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'events_received_ts_index'
+2025-05-09 14:48:50,177 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index received_ts_idx to events
+2025-05-09 14:48:50,209 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'events_received_ts_index'. Processed 1 items in 32ms. (total_rate=0.03125/ms, current_rate=0.03125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:51,217 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'local_media_repository_sha256_idx'
+2025-05-09 14:48:51,222 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index local_media_repository_sha256 to local_media_repository
+2025-05-09 14:48:51,243 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'local_media_repository_sha256_idx'. Processed 1 items in 21ms. (total_rate=0.047619047619047616/ms, current_rate=0.047619047619047616/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:52,245 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'remote_media_cache_sha256_idx'
+2025-05-09 14:48:52,248 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index remote_media_cache_sha256 to remote_media_cache
+2025-05-09 14:48:52,256 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'remote_media_cache_sha256_idx'. Processed 1 items in 8ms. (total_rate=0.125/ms, current_rate=0.125/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:53,258 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'sliding_sync_membership_snapshots_membership_event_id_idx'
+2025-05-09 14:48:53,261 - synapse.storage.background_updates - 870 - INFO - background_updates-0 - Adding index sliding_sync_membership_snapshots_membership_event_id_idx to sliding_sync_membership_snapshots
+2025-05-09 14:48:53,271 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'sliding_sync_membership_snapshots_membership_event_id_idx'. Processed 1 items in 10ms. (total_rate=0.1/ms, current_rate=0.1/ms, total_updated=1, batch_size=100)
+2025-05-09 14:48:54,278 - synapse.storage.background_updates - 578 - INFO - background_updates-0 - Starting update batch on background update 'mark_unreferenced_state_groups_for_deletion_bg_update'
+2025-05-09 14:48:54,283 - synapse.storage.background_updates - 621 - INFO - background_updates-0 - Running background update 'mark_unreferenced_state_groups_for_deletion_bg_update'. Processed 100 items in 3ms. (total_rate=33.333333333333336/ms, current_rate=33.33333333333333/ms, total_updated=100, batch_size=100)
+2025-05-09 14:48:54,284 - synapse.storage.background_updates - 428 - INFO - background_updates-0 - No more background updates to do. Unscheduling background update task.
+2025-05-09 14:49:11,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-1 - Rotating notifications
+2025-05-09 14:49:11,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-1 - Rotating notifications up to: 1
+2025-05-09 14:49:11,508 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-1 - Rotating notifications, handling 0 rows
+2025-05-09 14:49:11,517 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-1 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:49:11,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-1 - Dropped 0 items from caches
+2025-05-09 14:49:11,572 - synapse.util.task_scheduler - 383 - INFO - task-delete_old_otks-0-delete_old_otks_task - Task complete: 0.003sec (0.000sec, 0.000sec) (0.000sec/0.002sec/2) [0 dbevts] None, None
+2025-05-09 14:49:41,507 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-2 - Rotating notifications
+2025-05-09 14:49:41,513 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-2 - Rotating notifications up to: 1
+2025-05-09 14:49:41,518 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-2 - Rotating notifications, handling 0 rows
+2025-05-09 14:49:41,527 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-2 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:49:41,548 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-2 - Dropped 0 items from caches
+2025-05-09 14:50:11,508 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-3 - Rotating notifications
+2025-05-09 14:50:11,510 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-3 - Rotating notifications up to: 1
+2025-05-09 14:50:11,514 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-3 - Rotating notifications, handling 0 rows
+2025-05-09 14:50:11,522 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-3 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:50:11,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-3 - Dropped 0 items from caches
+2025-05-09 14:50:41,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-4 - Rotating notifications
+2025-05-09 14:50:41,508 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-4 - Rotating notifications up to: 1
+2025-05-09 14:50:41,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-4 - Rotating notifications, handling 0 rows
+2025-05-09 14:50:41,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-4 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:50:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-4 - Dropped 0 items from caches
+2025-05-09 14:51:11,510 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-5 - Rotating notifications
+2025-05-09 14:51:11,516 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-5 - Rotating notifications up to: 1
+2025-05-09 14:51:11,521 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-5 - Rotating notifications, handling 0 rows
+2025-05-09 14:51:11,527 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-5 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:51:11,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-5 - Dropped 0 items from caches
+2025-05-09 14:51:41,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-6 - Rotating notifications
+2025-05-09 14:51:41,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-6 - Rotating notifications up to: 1
+2025-05-09 14:51:41,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-6 - Rotating notifications, handling 0 rows
+2025-05-09 14:51:41,517 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-6 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:51:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-6 - Dropped 0 items from caches
+2025-05-09 14:52:11,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-7 - Rotating notifications
+2025-05-09 14:52:11,508 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-7 - Rotating notifications up to: 1
+2025-05-09 14:52:11,511 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-7 - Rotating notifications, handling 0 rows
+2025-05-09 14:52:11,516 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-7 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:52:11,552 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-7 - Dropped 0 items from caches
+2025-05-09 14:52:41,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-8 - Rotating notifications
+2025-05-09 14:52:41,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-8 - Rotating notifications up to: 1
+2025-05-09 14:52:41,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-8 - Rotating notifications, handling 0 rows
+2025-05-09 14:52:41,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-8 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:52:41,546 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-8 - Dropped 0 items from caches
+2025-05-09 14:53:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-9 - Rotating notifications
+2025-05-09 14:53:11,508 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-9 - Rotating notifications up to: 1
+2025-05-09 14:53:11,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-9 - Rotating notifications, handling 0 rows
+2025-05-09 14:53:11,517 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-9 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:53:11,553 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-9 - Dropped 0 items from caches
+2025-05-09 14:53:11,557 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-0 - Calling _generate_user_daily_visits
+2025-05-09 14:53:41,510 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-10 - Rotating notifications
+2025-05-09 14:53:41,517 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-10 - Rotating notifications up to: 1
+2025-05-09 14:53:41,521 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-10 - Rotating notifications, handling 0 rows
+2025-05-09 14:53:41,528 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-10 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:53:41,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-10 - Dropped 0 items from caches
+2025-05-09 14:54:11,508 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-11 - Rotating notifications
+2025-05-09 14:54:11,512 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-11 - Rotating notifications up to: 1
+2025-05-09 14:54:11,514 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-11 - Rotating notifications, handling 0 rows
+2025-05-09 14:54:11,519 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-11 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:54:11,547 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-11 - Dropped 0 items from caches
+2025-05-09 14:54:41,509 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-12 - Rotating notifications
+2025-05-09 14:54:41,512 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-12 - Rotating notifications up to: 1
+2025-05-09 14:54:41,515 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-12 - Rotating notifications, handling 0 rows
+2025-05-09 14:54:41,522 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-12 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:54:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-12 - Dropped 0 items from caches
+2025-05-09 14:55:11,510 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-13 - Rotating notifications
+2025-05-09 14:55:11,514 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-13 - Rotating notifications up to: 1
+2025-05-09 14:55:11,517 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-13 - Rotating notifications, handling 0 rows
+2025-05-09 14:55:11,522 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-13 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:55:11,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-13 - Dropped 0 items from caches
+2025-05-09 14:55:41,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-14 - Rotating notifications
+2025-05-09 14:55:41,507 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-14 - Rotating notifications up to: 1
+2025-05-09 14:55:41,510 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-14 - Rotating notifications, handling 0 rows
+2025-05-09 14:55:41,515 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-14 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:55:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-14 - Dropped 0 items from caches
+2025-05-09 14:56:11,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-15 - Rotating notifications
+2025-05-09 14:56:11,507 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-15 - Rotating notifications up to: 1
+2025-05-09 14:56:11,510 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-15 - Rotating notifications, handling 0 rows
+2025-05-09 14:56:11,515 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-15 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:56:11,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-15 - Dropped 0 items from caches
+2025-05-09 14:56:41,502 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-16 - Rotating notifications
+2025-05-09 14:56:41,504 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-16 - Rotating notifications up to: 1
+2025-05-09 14:56:41,507 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-16 - Rotating notifications, handling 0 rows
+2025-05-09 14:56:41,512 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-16 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:56:41,555 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-16 - Dropped 0 items from caches
+2025-05-09 14:57:11,508 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-17 - Rotating notifications
+2025-05-09 14:57:11,510 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-17 - Rotating notifications up to: 1
+2025-05-09 14:57:11,513 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-17 - Rotating notifications, handling 0 rows
+2025-05-09 14:57:11,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-17 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:57:11,554 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-17 - Dropped 0 items from caches
+2025-05-09 14:57:41,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-18 - Rotating notifications
+2025-05-09 14:57:41,508 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-18 - Rotating notifications up to: 1
+2025-05-09 14:57:41,511 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-18 - Rotating notifications, handling 0 rows
+2025-05-09 14:57:41,516 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-18 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:57:41,555 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-18 - Dropped 0 items from caches
+2025-05-09 14:58:11,504 - synapse.storage.databases.main.event_push_actions - 1242 - INFO - event_push_action_stream_orderings-0 - Searching for stream ordering 1 month ago
+2025-05-09 14:58:11,507 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-19 - Rotating notifications
+2025-05-09 14:58:11,508 - synapse.storage.databases.main.event_push_actions - 1246 - INFO - event_push_action_stream_orderings-0 - Found stream ordering 1 month ago: it's 0
+2025-05-09 14:58:11,508 - synapse.storage.databases.main.event_push_actions - 1249 - INFO - event_push_action_stream_orderings-0 - Searching for stream ordering 1 day ago
+2025-05-09 14:58:11,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-19 - Rotating notifications up to: 1
+2025-05-09 14:58:11,509 - synapse.storage.databases.main.event_push_actions - 1253 - INFO - event_push_action_stream_orderings-0 - Found stream ordering 1 day ago: it's 0
+2025-05-09 14:58:11,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-19 - Rotating notifications, handling 0 rows
+2025-05-09 14:58:11,516 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-19 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:58:11,555 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-19 - Dropped 0 items from caches
+2025-05-09 14:58:11,557 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-1 - Calling _generate_user_daily_visits
+2025-05-09 14:58:41,503 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-20 - Rotating notifications
+2025-05-09 14:58:41,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-20 - Rotating notifications up to: 1
+2025-05-09 14:58:41,509 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-20 - Rotating notifications, handling 0 rows
+2025-05-09 14:58:41,514 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-20 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:58:41,555 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-20 - Dropped 0 items from caches
+2025-05-09 14:59:11,502 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-21 - Rotating notifications
+2025-05-09 14:59:11,504 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-21 - Rotating notifications up to: 1
+2025-05-09 14:59:11,507 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-21 - Rotating notifications, handling 0 rows
+2025-05-09 14:59:11,512 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-21 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:59:11,556 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-21 - Dropped 0 items from caches
+2025-05-09 14:59:41,500 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-22 - Rotating notifications
+2025-05-09 14:59:41,502 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-22 - Rotating notifications up to: 1
+2025-05-09 14:59:41,504 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-22 - Rotating notifications, handling 0 rows
+2025-05-09 14:59:41,508 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-22 - Rotating notifications, deleted 0 push actions
+2025-05-09 14:59:41,555 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-22 - Dropped 0 items from caches
+2025-05-09 15:00:11,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-23 - Rotating notifications
+2025-05-09 15:00:11,507 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-23 - Rotating notifications up to: 1
+2025-05-09 15:00:11,511 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-23 - Rotating notifications, handling 0 rows
+2025-05-09 15:00:11,522 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-23 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:00:11,563 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-23 - Dropped 0 items from caches
+2025-05-09 15:01:35,634 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-24 - Dropped 0 items from caches
+2025-05-09 15:01:35,789 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-24 - Rotating notifications
+2025-05-09 15:01:35,791 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-24 - Rotating notifications up to: 1
+2025-05-09 15:01:35,792 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-24 - Rotating notifications, handling 0 rows
+2025-05-09 15:01:35,795 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-24 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:01:41,508 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-25 - Rotating notifications
+2025-05-09 15:01:41,512 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-25 - Rotating notifications up to: 1
+2025-05-09 15:01:41,515 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-25 - Rotating notifications, handling 0 rows
+2025-05-09 15:01:41,522 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-25 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:01:41,555 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-25 - Dropped 0 items from caches
+2025-05-09 15:07:47,436 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-26 - Dropped 0 items from caches
+2025-05-09 15:07:47,600 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-2 - Calling _generate_user_daily_visits
+2025-05-09 15:07:47,632 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-26 - Rotating notifications
+2025-05-09 15:07:47,633 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-26 - Rotating notifications up to: 1
+2025-05-09 15:07:47,635 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-26 - Rotating notifications, handling 0 rows
+2025-05-09 15:07:47,637 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-26 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:08:11,500 - synapse.storage.databases.main.event_push_actions - 1242 - INFO - event_push_action_stream_orderings-1 - Searching for stream ordering 1 month ago
+2025-05-09 15:08:11,521 - synapse.storage.databases.main.event_push_actions - 1246 - INFO - event_push_action_stream_orderings-1 - Found stream ordering 1 month ago: it's 0
+2025-05-09 15:08:11,522 - synapse.storage.databases.main.event_push_actions - 1249 - INFO - event_push_action_stream_orderings-1 - Searching for stream ordering 1 day ago
+2025-05-09 15:08:11,523 - synapse.storage.databases.main.event_push_actions - 1253 - INFO - event_push_action_stream_orderings-1 - Found stream ordering 1 day ago: it's 0
+2025-05-09 15:08:11,526 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-27 - Rotating notifications
+2025-05-09 15:08:11,534 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-27 - Rotating notifications up to: 1
+2025-05-09 15:08:11,537 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-27 - Rotating notifications, handling 0 rows
+2025-05-09 15:08:11,540 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-27 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:09:58,211 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-27 - Dropped 0 items from caches
+2025-05-09 15:09:58,280 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-3 - Calling _generate_user_daily_visits
+2025-05-09 15:09:58,547 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-28 - Rotating notifications
+2025-05-09 15:09:58,548 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-28 - Rotating notifications up to: 1
+2025-05-09 15:09:58,550 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-28 - Rotating notifications, handling 0 rows
+2025-05-09 15:09:58,554 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-28 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:10:11,510 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-29 - Rotating notifications
+2025-05-09 15:10:11,512 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-29 - Rotating notifications up to: 1
+2025-05-09 15:10:11,514 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-29 - Rotating notifications, handling 0 rows
+2025-05-09 15:10:11,520 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-29 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:10:11,548 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-28 - Dropped 0 items from caches
+2025-05-09 15:10:41,501 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-30 - Rotating notifications
+2025-05-09 15:10:41,503 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-30 - Rotating notifications up to: 1
+2025-05-09 15:10:41,504 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-30 - Rotating notifications, handling 0 rows
+2025-05-09 15:10:41,509 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-30 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:10:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-29 - Dropped 0 items from caches
+2025-05-09 15:11:11,503 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-31 - Rotating notifications
+2025-05-09 15:11:11,505 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-31 - Rotating notifications up to: 1
+2025-05-09 15:11:11,508 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-31 - Rotating notifications, handling 0 rows
+2025-05-09 15:11:11,511 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-31 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:11:11,552 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-30 - Dropped 0 items from caches
+2025-05-09 15:11:41,503 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-32 - Rotating notifications
+2025-05-09 15:11:41,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-32 - Rotating notifications up to: 1
+2025-05-09 15:11:41,508 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-32 - Rotating notifications, handling 0 rows
+2025-05-09 15:11:41,511 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-32 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:11:41,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-31 - Dropped 0 items from caches
+2025-05-09 15:12:11,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-33 - Rotating notifications
+2025-05-09 15:12:11,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-33 - Rotating notifications up to: 1
+2025-05-09 15:12:11,509 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-33 - Rotating notifications, handling 0 rows
+2025-05-09 15:12:11,513 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-33 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:12:11,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-32 - Dropped 0 items from caches
+2025-05-09 15:12:41,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-34 - Rotating notifications
+2025-05-09 15:12:41,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-34 - Rotating notifications up to: 1
+2025-05-09 15:12:41,509 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-34 - Rotating notifications, handling 0 rows
+2025-05-09 15:12:41,514 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-34 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:12:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-33 - Dropped 0 items from caches
+2025-05-09 15:13:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-35 - Rotating notifications
+2025-05-09 15:13:11,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-35 - Rotating notifications up to: 1
+2025-05-09 15:13:11,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-35 - Rotating notifications, handling 0 rows
+2025-05-09 15:13:11,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-35 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:13:11,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-34 - Dropped 0 items from caches
+2025-05-09 15:13:11,555 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-4 - Calling _generate_user_daily_visits
+2025-05-09 15:13:41,507 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-36 - Rotating notifications
+2025-05-09 15:13:41,511 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-36 - Rotating notifications up to: 1
+2025-05-09 15:13:41,514 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-36 - Rotating notifications, handling 0 rows
+2025-05-09 15:13:41,523 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-36 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:13:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-35 - Dropped 0 items from caches
+2025-05-09 15:14:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-37 - Rotating notifications
+2025-05-09 15:14:11,510 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-37 - Rotating notifications up to: 1
+2025-05-09 15:14:11,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-37 - Rotating notifications, handling 0 rows
+2025-05-09 15:14:11,519 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-37 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:14:11,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-36 - Dropped 0 items from caches
+2025-05-09 15:14:41,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-38 - Rotating notifications
+2025-05-09 15:14:41,507 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-38 - Rotating notifications up to: 1
+2025-05-09 15:14:41,510 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-38 - Rotating notifications, handling 0 rows
+2025-05-09 15:14:41,512 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-38 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:14:41,546 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-37 - Dropped 0 items from caches
+2025-05-09 15:15:11,503 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-39 - Rotating notifications
+2025-05-09 15:15:11,505 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-39 - Rotating notifications up to: 1
+2025-05-09 15:15:11,507 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-39 - Rotating notifications, handling 0 rows
+2025-05-09 15:15:11,511 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-39 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:15:11,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-38 - Dropped 0 items from caches
+2025-05-09 15:15:41,503 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-40 - Rotating notifications
+2025-05-09 15:15:41,505 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-40 - Rotating notifications up to: 1
+2025-05-09 15:15:41,506 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-40 - Rotating notifications, handling 0 rows
+2025-05-09 15:15:41,508 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-40 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:15:41,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-39 - Dropped 0 items from caches
+2025-05-09 15:16:11,502 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-41 - Rotating notifications
+2025-05-09 15:16:11,504 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-41 - Rotating notifications up to: 1
+2025-05-09 15:16:11,506 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-41 - Rotating notifications, handling 0 rows
+2025-05-09 15:16:11,510 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-41 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:16:11,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-40 - Dropped 0 items from caches
+2025-05-09 15:16:41,507 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-42 - Rotating notifications
+2025-05-09 15:16:41,511 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-42 - Rotating notifications up to: 1
+2025-05-09 15:16:41,514 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-42 - Rotating notifications, handling 0 rows
+2025-05-09 15:16:41,520 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-42 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:16:41,547 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-41 - Dropped 0 items from caches
+2025-05-09 15:17:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-43 - Rotating notifications
+2025-05-09 15:17:11,510 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-43 - Rotating notifications up to: 1
+2025-05-09 15:17:11,513 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-43 - Rotating notifications, handling 0 rows
+2025-05-09 15:17:11,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-43 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:17:11,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-42 - Dropped 0 items from caches
+2025-05-09 15:17:41,502 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-44 - Rotating notifications
+2025-05-09 15:17:41,503 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-44 - Rotating notifications up to: 1
+2025-05-09 15:17:41,505 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-44 - Rotating notifications, handling 0 rows
+2025-05-09 15:17:41,508 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-44 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:17:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-43 - Dropped 0 items from caches
+2025-05-09 15:18:11,502 - synapse.storage.databases.main.event_push_actions - 1242 - INFO - event_push_action_stream_orderings-2 - Searching for stream ordering 1 month ago
+2025-05-09 15:18:11,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-45 - Rotating notifications
+2025-05-09 15:18:11,506 - synapse.storage.databases.main.event_push_actions - 1246 - INFO - event_push_action_stream_orderings-2 - Found stream ordering 1 month ago: it's 0
+2025-05-09 15:18:11,506 - synapse.storage.databases.main.event_push_actions - 1249 - INFO - event_push_action_stream_orderings-2 - Searching for stream ordering 1 day ago
+2025-05-09 15:18:11,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-45 - Rotating notifications up to: 1
+2025-05-09 15:18:11,507 - synapse.storage.databases.main.event_push_actions - 1253 - INFO - event_push_action_stream_orderings-2 - Found stream ordering 1 day ago: it's 0
+2025-05-09 15:18:11,509 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-45 - Rotating notifications, handling 0 rows
+2025-05-09 15:18:11,513 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-45 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:18:11,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-44 - Dropped 0 items from caches
+2025-05-09 15:18:11,555 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-5 - Calling _generate_user_daily_visits
+2025-05-09 15:18:41,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-46 - Rotating notifications
+2025-05-09 15:18:41,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-46 - Rotating notifications up to: 1
+2025-05-09 15:18:41,510 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-46 - Rotating notifications, handling 0 rows
+2025-05-09 15:18:41,514 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-46 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:18:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-45 - Dropped 0 items from caches
+2025-05-09 15:19:11,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-47 - Rotating notifications
+2025-05-09 15:19:11,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-47 - Rotating notifications up to: 1
+2025-05-09 15:19:11,509 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-47 - Rotating notifications, handling 0 rows
+2025-05-09 15:19:11,513 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-47 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:19:11,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-46 - Dropped 0 items from caches
+2025-05-09 15:19:41,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-48 - Rotating notifications
+2025-05-09 15:19:41,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-48 - Rotating notifications up to: 1
+2025-05-09 15:19:41,508 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-48 - Rotating notifications, handling 0 rows
+2025-05-09 15:19:41,512 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-48 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:19:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-47 - Dropped 0 items from caches
+2025-05-09 15:20:11,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-49 - Rotating notifications
+2025-05-09 15:20:11,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-49 - Rotating notifications up to: 1
+2025-05-09 15:20:11,509 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-49 - Rotating notifications, handling 0 rows
+2025-05-09 15:20:11,514 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-49 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:20:11,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-48 - Dropped 0 items from caches
+2025-05-09 15:20:41,505 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-50 - Rotating notifications
+2025-05-09 15:20:41,507 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-50 - Rotating notifications up to: 1
+2025-05-09 15:20:41,510 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-50 - Rotating notifications, handling 0 rows
+2025-05-09 15:20:41,514 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-50 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:20:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-49 - Dropped 0 items from caches
+2025-05-09 15:21:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-51 - Rotating notifications
+2025-05-09 15:21:11,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-51 - Rotating notifications up to: 1
+2025-05-09 15:21:11,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-51 - Rotating notifications, handling 0 rows
+2025-05-09 15:21:11,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-51 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:21:11,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-50 - Dropped 0 items from caches
+2025-05-09 15:21:41,504 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-52 - Rotating notifications
+2025-05-09 15:21:41,506 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-52 - Rotating notifications up to: 1
+2025-05-09 15:21:41,508 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-52 - Rotating notifications, handling 0 rows
+2025-05-09 15:21:41,512 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-52 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:21:41,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-51 - Dropped 0 items from caches
+2025-05-09 15:22:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-53 - Rotating notifications
+2025-05-09 15:22:11,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-53 - Rotating notifications up to: 1
+2025-05-09 15:22:11,511 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-53 - Rotating notifications, handling 0 rows
+2025-05-09 15:22:11,518 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-53 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:22:11,549 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-52 - Dropped 0 items from caches
+2025-05-09 15:22:41,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-54 - Rotating notifications
+2025-05-09 15:22:41,509 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-54 - Rotating notifications up to: 1
+2025-05-09 15:22:41,512 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-54 - Rotating notifications, handling 0 rows
+2025-05-09 15:22:41,516 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-54 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:22:41,551 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-53 - Dropped 0 items from caches
+2025-05-09 15:23:11,506 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-55 - Rotating notifications
+2025-05-09 15:23:11,508 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-55 - Rotating notifications up to: 1
+2025-05-09 15:23:11,511 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-55 - Rotating notifications, handling 0 rows
+2025-05-09 15:23:11,517 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-55 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:23:11,553 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-54 - Dropped 0 items from caches
+2025-05-09 15:23:11,557 - synapse.storage.databases.main.metrics - 399 - INFO - generate_user_daily_visits-6 - Calling _generate_user_daily_visits
+2025-05-09 15:23:41,502 - synapse.storage.databases.main.event_push_actions - 1396 - INFO - rotate_notifs-56 - Rotating notifications
+2025-05-09 15:23:41,504 - synapse.storage.databases.main.event_push_actions - 1599 - INFO - rotate_notifs-56 - Rotating notifications up to: 1
+2025-05-09 15:23:41,506 - synapse.storage.databases.main.event_push_actions - 1685 - INFO - rotate_notifs-56 - Rotating notifications, handling 0 rows
+2025-05-09 15:23:41,509 - synapse.storage.databases.main.event_push_actions - 1770 - INFO - rotate_notifs-56 - Rotating notifications, deleted 0 push actions
+2025-05-09 15:23:41,550 - synapse.util.caches.lrucache - 217 - INFO - LruCache._expire_old_entries-55 - Dropped 0 items from caches
+2025-05-09 15:24:10,251 - twisted - 279 - INFO - sentinel - Received SIGINT, shutting down.
+2025-05-09 15:24:10,255 - synapse.storage.databases.main.lock - 113 - INFO - LockStore._on_shutdown-0 - Dropping held locks due to shutdown
+2025-05-09 15:24:10,257 - synapse.storage.databases.main.lock - 124 - INFO - LockStore._on_shutdown-0 - Dropped locks due to shutdown
+2025-05-09 15:24:10,258 - synapse.handlers.presence - 891 - INFO - presence.on_shutdown-0 - Performing _on_shutdown. Persisting 0 unpersisted changes
+2025-05-09 15:24:10,258 - synapse.handlers.presence - 903 - INFO - presence.on_shutdown-0 - Finished _on_shutdown
+2025-05-09 15:24:10,259 - synapse.app._base - 509 - INFO - sentinel - Shutting down...
+2025-05-09 15:24:10,271 - twisted - 279 - INFO - sentinel - (TCP Port 8008 Closed)
+2025-05-09 15:24:10,273 - twisted - 279 - INFO - sentinel - (TCP Port 8008 Closed)
+2025-05-09 15:24:10,321 - twisted - 279 - INFO - sentinel - Main loop terminated.
